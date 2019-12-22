@@ -1,5 +1,4 @@
 # AppMover
-========
 
 Framework for moving your application bundle to Applications folder on launch.
 Swift 5, no deprecated API's, targeting 10.15 and above.
