@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		75492BC623AD6711004823F1 /* AppMover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75492BC523AD6711004823F1 /* AppMover.swift */; };
+		75492BC823AEEF4D004823F1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75492BC723AEEF4D004823F1 /* Extensions.swift */; };
 		75647A2223AD659600C8E88E /* AppMover.h in Headers */ = {isa = PBXBuildFile; fileRef = 75647A2023AD659600C8E88E /* AppMover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75492BC523AD6711004823F1 /* AppMover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMover.swift; sourceTree = "<group>"; };
+		75492BC723AEEF4D004823F1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		75647A1D23AD659600C8E88E /* AppMover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppMover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75647A2023AD659600C8E88E /* AppMover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMover.h; sourceTree = "<group>"; };
 		75647A2123AD659600C8E88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				75492BC523AD6711004823F1 /* AppMover.swift */,
+				75492BC723AEEF4D004823F1 /* Extensions.swift */,
 				75647A2023AD659600C8E88E /* AppMover.h */,
 				75647A2123AD659600C8E88E /* Info.plist */,
 			);
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75492BC623AD6711004823F1 /* AppMover.swift in Sources */,
+				75492BC823AEEF4D004823F1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
