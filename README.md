@@ -1,10 +1,11 @@
 # AppMover
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Framework for moving your application bundle to Applications folder on launch.
 
 Swift 5, no deprecated API's, targeting 10.15 and above.
 
-
+![OGSwitch for macOS](screen.png "AppMover")
 
 Requirements
 ------------
@@ -24,8 +25,6 @@ Usage
 
 Call ```AppMover.moveIfNecessary()``` at the beginning of ```applicationWillFinishLaunching```.
 
-
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## License
 The MIT License (MIT)
