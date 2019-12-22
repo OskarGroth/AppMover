@@ -88,7 +88,8 @@ public enum AppMover {
         }
         if needAuth {
             let result = authorizedInstall(from: bundleUrl, to: destinationUrl)
-            guard !result.cancelled, result.success else {
+            guard !result.cancelled else { moveIfNecessary(); return }
+            guard result.success else {
                 NSApplication.shared.terminate(self)
                 return
             }
@@ -113,7 +114,7 @@ public enum AppMover {
         
         relaunch(at: destinationUrl.path, completionCallback: {
             DispatchQueue.main.async {
-                NSApplication.shared.terminate(self)
+                exit(0)
             }
         })
         
