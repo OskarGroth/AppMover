@@ -4,18 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AppMover.xcscheme_^#shared#^_</key>
+		<key>AppMover-Demo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>75647A1C23AD659600C8E88E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
+			<integer>1</integer>
 		</dict>
 	</dict>
 </dict>
