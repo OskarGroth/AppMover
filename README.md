@@ -23,6 +23,9 @@ Usage
 
 Call ```AppMover.moveIfNecessary()``` at the beginning of ```applicationWillFinishLaunching```.
 
+## Credits
+
+Inspired by https://github.com/potionfactory/LetsMove/.
 
 ## License
 The MIT License (MIT)
