@@ -25,7 +25,7 @@ Call ```AppMover.moveIfNecessary()``` at the beginning of ```applicationWillFini
 
 ## Credits
 
-Inspired by https://github.com/potionfactory/LetsMove/.
+Inspired by [LetsMove](https://github.com/potionfactory/LetsMove/).
 
 ## License
 The MIT License (MIT)
