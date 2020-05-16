@@ -116,7 +116,7 @@ public enum AppMover {
     public static func relaunch(at path: String, completionCallback: @escaping () -> Void) {
         let pid = ProcessInfo.processInfo.processIdentifier
         Process.runTask(command: "/usr/bin/xattr", arguments: ["-d", "-r", "com.apple.quarantine", path], completion: { _ in
-            let waitForExitScript = "(while /bin/kill -0 \(pid) >&/dev/null; do /bin/sleep 0.1; done; /usr/bin/open \(path)) &"
+            let waitForExitScript = "(while /bin/kill -0 \(pid) >&/dev/null; do /bin/sleep 0.1; done; /usr/bin/open \"\(path)\") &"
             Process.runTask(command: "/bin/sh", arguments: ["-c", waitForExitScript])
             completionCallback()
         })
