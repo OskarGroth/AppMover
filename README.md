@@ -28,6 +28,11 @@ Usage
 
 Call ```AppMover.moveIfNecessary()``` at the beginning of ```applicationWillFinishLaunching```.
 
+You can also specify a `destinationName` if you'd like to guarantee that the app is named a
+particular way in the Applications folder.
+e.g. ```AppMover.moveIfNecessary(destinationName: .CFBundleName)``` to use the CFBundleName,
+which can be useful to prevent propogation of suffixes added by Archive Utility, e.g. "MyApp-1.app"
+
 ## Credits
 
 Inspired by [LetsMove](https://github.com/potionfactory/LetsMove/).

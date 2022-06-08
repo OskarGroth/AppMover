@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		"AppMover::AppMover::Product" /* AppMover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppMover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"AppMover::AppMover::Product" /* AppMover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppMover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46391DF27BF044400E573B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = AppMover/Info.plist; sourceTree = SOURCE_ROOT; };
 		D46391E027BF044400E573B5 /* AppMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMover.h; path = AppMover/AppMover.h; sourceTree = SOURCE_ROOT; };
 		D46391E127BF044400E573B5 /* AppMover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppMover.swift; path = AppMover/AppMover.swift; sourceTree = SOURCE_ROOT; };
@@ -44,7 +44,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -55,7 +55,6 @@
 				OBJ_19 /* README.md */,
 				OBJ_20 /* screen.png */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -127,7 +126,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,7 +169,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = AppMover.xcodeproj/AppMover_Info.plist;
+				INFOPLIST_FILE = AppMover/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -200,7 +199,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = AppMover.xcodeproj/AppMover_Info.plist;
+				INFOPLIST_FILE = AppMover/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

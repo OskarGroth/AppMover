@@ -9,15 +9,41 @@
 import AppKit
 import Security
 
-public enum AppMover {
+public struct AppMover {
+    
+    public enum AppName {
+        /// CFBundleName from Info.plist
+        /// This can be useful to prevent propogation of suffixes added by Archive Utility, e.g. "MyApp-1.app"
+        case CFBundleName
+        /// Name of currently running .app in its current location on disk, e.g. "MyApp.app" or "MyApp-1.app"
+        case current
+        /// Arbitrary name (excluding ".app" suffix)
+        case custom(String)
         
-    public static func moveIfNecessary() {
+        var string: String {
+            switch self {
+            case .CFBundleName:
+                if let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
+                    return name
+                }
+                fallthrough
+            case .current:
+                return (Bundle.main.bundleURL.lastPathComponent as NSString).deletingPathExtension
+            case .custom(let name):
+                return name
+            }
+        }
+    }
+    
+    /// Moves the running app bundle into an appropriate "Applications" Folder if necessary.
+    ///
+    /// If set, `destinationName` specifies the name the app bundle should take when copied.
+    public static func moveIfNecessary(destinationName: AppName = .current) {
         let fm = FileManager.default
         guard !Bundle.main.isInstalled,
             let applications = preferredInstallDirectory() else { return }
-        let bundleUrl = Bundle.main.bundleURL
-        let bundleName = bundleUrl.lastPathComponent
-        let destinationUrl = applications.appendingPathComponent(bundleName)
+        
+        let destinationUrl = applications.appendingPathComponent(destinationName.string + ".app")
         let needDestAuth = fm.fileExists(atPath: destinationUrl.path) && !fm.isWritableFile(atPath: destinationUrl.path)
         let needAuth = needDestAuth || !fm.isWritableFile(atPath: applications.path)
         
@@ -39,7 +65,7 @@ public enum AppMover {
             return
         }
         if needAuth {
-            let result = authorizedInstall(from: bundleUrl, to: destinationUrl)
+            let result = authorizedInstall(from: Bundle.main.bundleURL, to: destinationUrl)
             guard !result.cancelled else { moveIfNecessary(); return }
             guard result.success else {
                 NSApplication.shared.terminate(self)
@@ -56,13 +82,13 @@ public enum AppMover {
                     }
                 }
             }
-            guard (try? fm.copyItem(at: bundleUrl, to: destinationUrl)) != nil else {
+            guard (try? fm.copyItem(at: Bundle.main.bundleURL, to: destinationUrl)) != nil else {
                 return
             }
         }
         
         // Trash the original app
-        _ = try? fm.removeItem(at: bundleUrl)
+        _ = try? fm.removeItem(at: Bundle.main.bundleURL)
         
         relaunch(at: destinationUrl.path, completionCallback: {
             DispatchQueue.main.async {
