@@ -17,6 +17,11 @@ Configure your Cartfile to use `AppMover`:
 
 Requires Swift 5.
 
+## Installation (Swift Package Manager)
+```
+https://github.com/OskarGroth/AppMover
+```
+
 
 Usage
 -----

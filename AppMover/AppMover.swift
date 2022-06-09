@@ -81,8 +81,8 @@ public enum AppMover {
         return sourceURL.withUnsafeFileSystemRepresentation({ sourcePath -> (cancelled: Bool, success: Bool) in
             return destinationURL.withUnsafeFileSystemRepresentation({ destinationPath -> (cancelled: Bool, success: Bool) in
                 guard let sourcePath = sourcePath, let destinationPath = destinationPath else { return (false, false) }
-                let deleteCommand = "rm -rf '\(String(cString: destinationPath))'"
-                let copyCommand = "cp -pR '\(String(cString: sourcePath))' '\(String(cString: destinationPath))'"
+                let deleteCommand = "/bin/rm -rf '\(String(cString: destinationPath))'"
+                let copyCommand = "/bin/cp -pR '\(String(cString: sourcePath))' '\(String(cString: destinationPath))'"
                 guard let script = NSAppleScript(source: "do shell script \"\(deleteCommand) && \(copyCommand)\" with administrator privileges") else {
                     return (false, false)
                 }
